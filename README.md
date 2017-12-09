@@ -11,6 +11,8 @@ To setup this service locally, you require
 > virtualenv venv
 > venv\Scripts\activate   # source etc\bin && activate -- on Unix Systems.
 (venv) > pip install -r requirements.txt
-> set FLASK_APP=app.py    # export FLASK_APP=app.py -- on Unix
-> flask run
+(venv) > set FLASK_APP=app.py    # export FLASK_APP=app.py -- on Unix
+(venv) > set FLASK_DEBUG=1       # export FLASK_DEBUG=1    -- on Unix
+(venv) > cd todoapi
+(venv) > flask run
 ```
