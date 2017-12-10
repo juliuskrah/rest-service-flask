@@ -28,7 +28,7 @@ def remove_todo(key):
     """
     Delete a Dictionary from an Array
     """
-    todo = find_todo(TODOS, key)
+    todo = find_todo(key)
     TODOS.remove(todo)
 
 def update_todo(todo, key):
@@ -50,12 +50,12 @@ def add_todo(todo):
     todo['created_time'] = str(datetime.now())
     TODOS.append(todo)
 
-def find_todo(seq, key):
+def find_todo(key):
     """
     Search function that searches for a Dictionary within an Array
     """
-    return next((item for item in seq if item["id"] == key), None)
+    return next((item for item in TODOS if item["id"] == key), None)
 
 def abort_if_todo_doesnt_exist(todo_id):
-    if find_todo(TODOS, todo_id) is None:
+    if find_todo(todo_id) is None:
         abort(404, message="Todo {} doesn't exist".format(todo_id))

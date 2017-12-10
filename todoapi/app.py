@@ -13,5 +13,5 @@ app = Flask(__name__)
 api = Api(app, default_mediatype='application/json')
 api.representations['application/xml'] = output_xml
 
-api.add_resource(todo_resource.TodoList, '/api/v1.0/resources')
+api.add_resource(todo_resource.TodoList, '/api/v1.0/resources/')
 api.add_resource(todo_resource.Todo, '/api/v1.0/resources/<int:todo_id>')
