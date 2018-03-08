@@ -24,12 +24,14 @@ TODOS = [
         'created_time': str(datetime.now()), 'modified_time': None},
 ]
 
+
 def remove_todo(key):
     """
     Delete a Dictionary from an Array
     """
     todo = find_todo(key)
     TODOS.remove(todo)
+
 
 def update_todo(todo, key):
     """
@@ -42,6 +44,7 @@ def update_todo(todo, key):
             todo['created_time'] = item['created_time']
             TODOS[idx] = todo
 
+
 def add_todo(todo):
     """
     Add a Dictionary to an Array
@@ -50,11 +53,13 @@ def add_todo(todo):
     todo['created_time'] = str(datetime.now())
     TODOS.append(todo)
 
+
 def find_todo(key):
     """
     Search function that searches for a Dictionary within an Array
     """
     return next((item for item in TODOS if item["id"] == key), None)
+
 
 def abort_if_todo_doesnt_exist(todo_id):
     if find_todo(todo_id) is None:

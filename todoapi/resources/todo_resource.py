@@ -2,6 +2,7 @@ from flask_restful import Resource
 from flask import request
 from todoapi.common import util
 
+
 class Todo(Resource):
     def get(self, todo_id):
         """
@@ -26,6 +27,7 @@ class Todo(Resource):
         task = request.get_json(force=True)
         util.update_todo(task, todo_id)
         return task, 201
+
 
 class TodoList(Resource):
     def get(self):
